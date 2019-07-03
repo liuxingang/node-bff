@@ -2,7 +2,7 @@
  * @Author: liuxingang
  * @Date: 2019-06-26 09:42:39
  * @Last Modified by: liuxingang
- * @Last Modified time: 2019-07-03 11:13:34
+ * @Last Modified time: 2019-07-03 15:15:47
  */
 const path = require('path');
 const Koa = require('koa');
@@ -10,7 +10,7 @@ const static = require('koa-static');
 const render = require('koa-art-template')
 const Router = require('koa-router')
 let config = require('./config/config')
-let webpackConfig = require('./webpack.config.dev')
+
 
 
 
@@ -24,20 +24,9 @@ const app = new Koa();
 
 
 if (isDev) {
-    // const Webpack = require('webpack');
-    // const WebpackDevServer = require('webpack-dev-server');
-    // const compiler = Webpack(webpackConfig);
-    // const devServerOptions = Object.assign({}, webpackConfig.devServer, {
-    //     open: true,
-    //     stats: {
-    //         colors: true
-    //     }
-    // })
-    // app.use(new WebpackDevServer(compiler, devServerOptions))
-
-
     const Webpack = require('webpack');
     const koaWebpack = require('koa-webpack')
+    let webpackConfig = require('./build/webpack.config.dev')
     const devServerOptions = Object.assign({}, webpackConfig, {
         publicPath: webpackConfig.output.publicPath,
         open: true,

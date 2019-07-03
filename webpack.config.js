@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const insertHtmlJsPlugin = require('./config/insertHtmlJsPlugin');
+const insertHtmlJsPlugin = require('./build/insertHtmlJsPlugin');
 
 
 const TransferWebpackPlugin = require('transfer-webpack-plugin');
