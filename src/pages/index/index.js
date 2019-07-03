@@ -1,2 +1,3 @@
 import './index.css'
-alert('index.js')
+let s = 'hello node bff'
+// alert(`index page ${s}`)

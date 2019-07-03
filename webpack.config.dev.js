@@ -8,11 +8,13 @@ module.exports = {
     entry: {
         index: ['./src/pages/index/index.js']
     },
+
+    target: 'node',
     mode: 'development',
     output: {
         filename: 'pages/[name]/[name].bundle.js',
-        path: path.resolve(__dirname, 'src'),
-        publicPath: '/'
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: '/dist1'
     },
     module: {
         rules: [{
@@ -21,6 +23,14 @@ module.exports = {
                 'style-loader',
                 'css-loader'
             ]
+        },
+        {
+            test: /\.html$/,
+            loader: "art-template-loader",
+            options: {
+                // art-template options (if necessary)
+                // @see https://github.com/aui/art-template
+            }
         }]
     },
     plugins: [
@@ -28,13 +38,14 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: '首页',
             filename: 'pages/global/layout.html',
-            template: './src/pages/global/layout.html'
+            template: './src/pages/global/layout.html',
+            inject: false
         }),
         new HtmlWebpackPlugin({
             title: 'index',
             filename: 'pages/index/index.html',
             template: './src/pages/index/index.html',
-            inject: true
+            inject: false
         }),
         new insertHtmlJsPlugin(),
     ],

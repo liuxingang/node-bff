@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "art-template": "^4.13.2",
+    "axios": "^0.19.0",
     "html-webpack-plugin": "^3.2.0",
     "koa": "^2.7.0",
     "koa-art-template": "^1.1.1",
@@ -21,6 +22,7 @@
     "webpack-cli": "^3.3.5"
   },
   "devDependencies": {
+    "art-template-loader": "^1.4.3",
     "clean-webpack-plugin": "^3.0.0",
     "cross-env": "^5.2.0",
     "css-loader": "^3.0.0",

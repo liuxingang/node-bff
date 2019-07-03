@@ -2,7 +2,7 @@
  * @Author: liuxingang
  * @Date: 2019-06-26 09:42:39
  * @Last Modified by: liuxingang
- * @Last Modified time: 2019-06-27 11:11:34
+ * @Last Modified time: 2019-07-03 09:25:02
  */
 const path = require('path');
 const Koa = require('koa');
@@ -10,6 +10,8 @@ const static = require('koa-static');
 const render = require('koa-art-template')
 const Router = require('koa-router')
 let config = require('./config/config')
+let getTemplate = require('./config/getTemplate')
+let template = require('art-template');
 let webpackConfig = require('./webpack.config.dev')
 
 
@@ -39,7 +41,10 @@ if (isDev) {
     const Webpack = require('webpack');
     const koaWebpack = require('koa-webpack')
     const devServerOptions = Object.assign({}, webpackConfig, {
+        publicPath: webpackConfig.output.publicPath,
         open: true,
+        hot: true,
+        inline: true,
         stats: {
             colors: true
         }
@@ -55,13 +60,16 @@ if (isDev) {
 
 }
 
-render(app, {
-    root: config.viewsPath,
-    extname: '.html',
-    debug: process.env.NODE_ENV !== 'production',
-})
+// render(app, {
+//     root: config.viewsPath,
+//     extname: '.html',
+//     debug: process.env.NODE_ENV !== 'production',
+// })
 
-app.use(static(config.staticPath))
+if (!isDev) {
+    app.use(static(config.staticPath))
+}
+
 
 const router = new Router();
 
@@ -75,7 +83,15 @@ app.use(async (ctx, next) => {
 
 
 router.get('/', async (ctx) => {
-    await ctx.render('index/index')
+    console.log(12121)
+    const templateData = await getTemplate('index/index.html')
+    console.log('🍉🍉🍉🍉🍉')
+    console.log(templateData)
+    let _html = template(__dirname + '/dist1/pages/index/index.html', { name: 'lxg' });
+    console.log(_html)
+    // await ctx.render(templateData)
+    ctx.body = _html
+
 })
 router.get('/news', (ctx) => {
     ctx.body = 'news'

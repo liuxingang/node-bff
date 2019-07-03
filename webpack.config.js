@@ -13,9 +13,9 @@ module.exports = {
         index: ['./src/pages/index/index.js']
     },
     output: {
-        filename: 'pages/[name]/[name].bundle.js',
+        filename: 'pages/[name]/[name]-[hash:5].bundle.js',
         path: path.resolve(__dirname, 'dist'),
-        publicPath: '/'
+        publicPath: '/dist'
     },
     module: {
         rules: [{
@@ -24,10 +24,18 @@ module.exports = {
                 'style-loader',
                 'css-loader'
             ]
+        },
+        {
+            test: /\.html$/,
+            loader: "art-template-loader",
+            options: {
+                // art-template options (if necessary)
+                // @see https://github.com/aui/art-template
+            }
         }]
     },
     plugins: [
-        // new CleanWebpackPlugin(),
+        new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             title: '首页',
             filename: 'pages/global/layout.html',
