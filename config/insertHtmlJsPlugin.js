@@ -7,11 +7,18 @@ class InsertHtmlJsPlugin {
         compiler.hooks.compilation.tap(MyPlugin, compilation => {
             console.log('🍌🍌🍌🍌🍌🍌🍌🍌🍌🍌🍌🍌🍌🍌')
             compilation.hooks.htmlWebpackPluginBeforeHtmlProcessing.tap(MyPlugin, (data, cb) => {
-                // console.log(data)
+                console.log(data.assets)
                 const _js = data.assets.js
                 let _html = data.html
-                _html = _html.replace("<!--injectjs-->", `<script src=${_js}></script>`)
+                let injectJs = ''
+                if (_js.length > 0) {
+                    for (let i = 0; i < _js.length; i++) {
+                        injectJs += `<script src=${_js[i]}></script>`
+                    }
+                }
+                _html = _html.replace("<!--injectjs-->", injectJs)
                 data.html = _html
+                console.log(_html)
             })
         })
     };

@@ -4,7 +4,7 @@
   "description": "node中间层基础框架",
   "main": "index.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=devlopment node app.js",
+    "dev": "cross-env NODE_ENV=devlopment supervisor  app.js",
     "start": "cross-env NODE_ENV=production node app.js",
     "build": "cross-env NODE_ENV=production webpack"
   },
@@ -26,8 +26,10 @@
     "clean-webpack-plugin": "^3.0.0",
     "cross-env": "^5.2.0",
     "css-loader": "^3.0.0",
+    "html-webpack-harddisk-plugin": "^1.0.1",
     "koa-webpack": "^5.2.3",
     "style-loader": "^0.23.1",
+    "supervisor": "^0.12.0",
     "transfer-webpack-plugin": "^0.1.4",
     "webpack-dev-server": "^3.7.2"
   }

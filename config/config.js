@@ -5,7 +5,7 @@ module.exports = {
     dev: {
         port: 3000,
         // viewsPath: path.join(__dirname, '../dist1/pages'),
-        viewsPath: path.join(__dirname, '../dist1/pages'),
+        viewsPath: path.join(__dirname, '../dev/pages'),
         viewsPathText: 'dist1/pages',
         staticPath: path.join(__dirname, '../dist1'),
     },
