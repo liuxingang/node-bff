@@ -2,7 +2,7 @@
  * @Author: liuxingang
  * @Date: 2019-06-26 09:42:39
  * @Last Modified by: liuxingang
- * @Last Modified time: 2019-07-03 15:15:47
+ * @Last Modified time: 2019-07-03 16:34:58
  */
 const path = require('path');
 const Koa = require('koa');
@@ -53,9 +53,9 @@ render(app, {
     debug: process.env.NODE_ENV !== 'production',
 })
 
-// if (!isDev) {
-//     app.use(static(config.staticPath))
-// }
+if (!isDev) {
+    app.use(static(config.staticPath))
+}
 
 
 const router = new Router();

@@ -6,14 +6,12 @@ module.exports = {
         port: 3000,
         // viewsPath: path.join(__dirname, '../dist1/pages'),
         viewsPath: path.join(__dirname, '../dev/pages'),
-        viewsPathText: 'dist1/pages',
-        staticPath: path.join(__dirname, '../dist1'),
+        staticPath: path.join(__dirname, '../'),
     },
     //正式环境配置
     prod: {
         port: 3100,
         viewsPath: path.join(__dirname, '../dist/pages'),
-        viewsPathText: 'dist/pages',
-        staticPath: path.join(__dirname, '../'),
+        staticPath: path.join(__dirname, '../dist'),
     }
 }

@@ -1,12 +1,14 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 
 const merge = require("webpack-merge");
 const wbepackBaseConfig = require("./webpack.config.base");
 
 let webpackDevConfig = {
-    target: 'node',
+    // target: 'node',
     mode: 'development',
+    devtool: 'inline-source-map',
     output: {
         filename: 'pages/[name]/[name].bundle.js',
         path: path.resolve(__dirname, '../dev'),

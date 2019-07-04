@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=devlopment supervisor  app.js",
     "start": "cross-env NODE_ENV=production node app.js",
-    "build": "cross-env NODE_ENV=production webpack"
+    "build": "cross-env NODE_ENV=production  webpack --config ./build/webpack.config.prod.js"
   },
   "author": "lxg",
   "license": "ISC",
@@ -22,12 +22,18 @@
     "webpack-cli": "^3.3.5"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
     "art-template-loader": "^1.4.3",
+    "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
     "cross-env": "^5.2.0",
     "css-loader": "^3.0.0",
     "html-webpack-harddisk-plugin": "^1.0.1",
     "koa-webpack": "^5.2.3",
+    "less": "^3.9.0",
+    "less-loader": "^5.0.0",
+    "mini-css-extract-plugin": "^0.7.0",
     "style-loader": "^0.23.1",
     "supervisor": "^0.12.0",
     "transfer-webpack-plugin": "^0.1.4",
