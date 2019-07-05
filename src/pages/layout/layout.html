@@ -6,17 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>node-bff</title>
-
+    <!--injectcss-->
     {{block 'head_content'}}{{/block}}
 </head>
 
 <body>
+    <div class="root"></div>
+    {{include '../nav/nav.html'}}
     {{block 'main_content'}}{{/block}}
 
-    <!-- <script src="https://code.jquery.com/jquery-3.1.0.js">
-    </script> -->
+    <!--injectjs-->
+    {{block 'footer_content'}}
 
-    {{block 'footer_content'}}{{/block}}
+    {{/block}}
 
 </body>
 

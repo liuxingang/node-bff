@@ -1,6 +1,9 @@
+import '../nav-left/nav-left'
 import './index.css'
-import utils from '../../common/utils'
-import { filter, writeFn } from '../../common/filter'
+import utils from 'common/js/utils'
+import { filter, writeFn } from 'common/js/filter'
+
+
 
 console.log(utils)
 console.log(filter)

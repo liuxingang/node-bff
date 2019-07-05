@@ -2,13 +2,14 @@
  * @Author: liuxingang
  * @Date: 2019-06-26 09:42:39
  * @Last Modified by: liuxingang
- * @Last Modified time: 2019-07-03 16:34:58
+ * @Last Modified time: 2019-07-05 11:24:59
  */
 const path = require('path');
 const Koa = require('koa');
 const static = require('koa-static');
 const render = require('koa-art-template')
 const Router = require('koa-router')
+const IndexRouter = require('./src/router/index')
 let config = require('./config/config')
 
 
@@ -69,13 +70,14 @@ app.use(async (ctx, next) => {
 
 
 
-router.get('/', async (ctx) => {
+// router.get('/', async (ctx) => {
 
-    await ctx.render('index/index', {
-        title: 'lxg'
-    })
+//     await ctx.render('index/index', {
+//         title: 'lxg'
+//     })
 
-})
+// })
+router.use('/', IndexRouter)
 router.get('/news', async (ctx) => {
     await ctx.render('news/news', {
         title: 'lxg'

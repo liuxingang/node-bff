@@ -29,6 +29,9 @@
     "clean-webpack-plugin": "^3.0.0",
     "cross-env": "^5.2.0",
     "css-loader": "^3.0.0",
+    "extract-loader": "^3.1.0",
+    "file-loader": "^4.0.0",
+    "html-loader": "^0.5.5",
     "html-webpack-harddisk-plugin": "^1.0.1",
     "koa-webpack": "^5.2.3",
     "less": "^3.9.0",
@@ -37,6 +40,7 @@
     "style-loader": "^0.23.1",
     "supervisor": "^0.12.0",
     "transfer-webpack-plugin": "^0.1.4",
+    "url-loader": "^2.0.1",
     "webpack-dev-server": "^3.7.2",
     "webpack-merge": "^4.2.1"
   }

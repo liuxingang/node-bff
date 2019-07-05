@@ -1,4 +1,4 @@
-{{extend '../global/layout.html'}}
+{{extend '../layout/layout.html'}}
 
 {{block 'head_content'}}
 <!--injectcss-->
@@ -6,7 +6,13 @@
 
 
 {{block 'main_content'}}
+
+{{include '../nav-left/nav-left.html'}}
+
 <div class="main">index 1111{{title}}</div>
+<h3>
+    <img src="./img/logo.png" alt="">
+</h3>
 {{/block}}
 
 {{block 'footer_content'}}
