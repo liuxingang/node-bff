@@ -2,7 +2,7 @@
  * @Author: liuxingang
  * @Date: 2019-06-26 09:42:39
  * @Last Modified by: liuxingang
- * @Last Modified time: 2019-07-05 11:24:59
+ * @Last Modified time: 2019-07-10 15:36:03
  */
 const path = require('path');
 const Koa = require('koa');
@@ -10,6 +10,8 @@ const static = require('koa-static');
 const render = require('koa-art-template')
 const Router = require('koa-router')
 const IndexRouter = require('./src/router/index')
+const NewsRouter = require('./src/router/news')
+const AboutRouter = require('./src/router/about')
 let config = require('./config/config')
 
 
@@ -77,17 +79,10 @@ app.use(async (ctx, next) => {
 //     })
 
 // })
-router.use('/', IndexRouter)
-router.get('/news', async (ctx) => {
-    await ctx.render('news/news', {
-        title: 'lxg'
-    })
-})
-router.get('/about', async (ctx) => {
-    await ctx.render('about/about', {
-        title: 'lxg'
-    })
-})
+router.use(IndexRouter)
+router.use(AboutRouter)
+router.use(NewsRouter)
+
 
 app.use(router.routes())
     .use(router.allowedMethods());
