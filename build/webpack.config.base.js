@@ -74,13 +74,13 @@ let webpackBaseConfig = {
                 test: /\.less$/,
                 exclude: /node_modules/,
                 use: [
+
                     { loader: MiniCssExtractPlugin.loader },
-                    // 'style-loader',
                     'css-loader',
                     'less-loader'
                 ]
             }, {
-                test: /\.js$/,
+                test: /\.js|jsx$/,
                 exclude: /(node_modules|bower_components)/,
                 use: {
                     loader: 'babel-loader',
