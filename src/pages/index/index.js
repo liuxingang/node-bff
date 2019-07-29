@@ -28,7 +28,7 @@ class Counter extends React.Component {
         console.log(111)
     }
     componentDidMount() {
-        alert('222')
+        alert('222111')
     }
 
 
