@@ -27,7 +27,7 @@
     "@babel/core": "^7.5.4",
     "@babel/preset-env": "^7.5.4",
     "@babel/preset-react": "^7.0.0",
-    "acorn": "^6.2.0",
+    "acorn": "^6.4.1",
     "acorn-dynamic-import": "^4.0.0",
     "art-template-loader": "^1.4.3",
     "babel-loader": "^8.0.6",
